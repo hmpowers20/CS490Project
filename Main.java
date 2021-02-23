@@ -8,18 +8,15 @@ public class Main {
 
 
 
-        parseF MyParse = new parseF();
-
-        MyParse.File();
-
-
-        MainView screen = new MainView();
-        JFrame window = Window.createWindow();  // create the window JFrame
-        window.add(screen);
-        window.pack();
+        parseF myParser = new parseF();
+        //myParser.File();
+        MainView mainScreen = new MainView();
+        JFrame mainWindow = MainView.mainMenu();  // create the window JFrame
+        mainWindow.add(mainScreen);
+        mainWindow.pack();
 
 
-        System.out.println("ng");
+        System.out.println("end");
 
     }
 
