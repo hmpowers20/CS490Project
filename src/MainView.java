@@ -1,14 +1,41 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class MainView extends JComponent {
 
-    public static void MainView1() {
+    public static JFrame mainMenu() {
+        JFrame window = new JFrame("Phase 1");   // create the window JFrame
+        JPanel buttons = new JPanel();
+        JButton startProgram = new JButton("Start System");
+        JButton endProgram = new JButton("End Program");
+        startProgram.setFont(new Font("Courier", Font.PLAIN, 30));
+        endProgram.setFont(new Font("Courier", Font.PLAIN, 30));
+        startProgram.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                Window.createWindow();
+                window.dispose();
 
-        JButton startSystem = new JButton("Start System");
-        startSystem.setBounds(485, 500, 200, 50);//main menu play button positions
-        startSystem.setFont(new Font("Arial", Font.BOLD, 20));
-        startSystem.setBackground(new Color(0, 190, 220));
+            }
+        });
+        endProgram.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                System.exit(1);
+                window.dispose();
 
+            }
+        });
+
+        window.add(startProgram,BorderLayout.PAGE_START);
+        window.add(endProgram,BorderLayout.PAGE_START);
+        window.setResizable(true);
+        window.setLayout(new FlowLayout());
+        window.setVisible(true);
+
+
+        return window;
     }
 }
