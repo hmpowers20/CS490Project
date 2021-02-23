@@ -22,6 +22,7 @@ public class Window extends parseF {
         JButton endProgram = new JButton ("Exit Program");
         JLabel timeUnit = new JLabel("1 time unit (ms) = ");
         JTextArea time = new JTextArea();
+
         JTextField systemReport = new JTextField("This will eventually show system report stats (finished processes, current throughput, etc.)");
         window.add(startButton,BorderLayout.PAGE_START);
         window.add(pauseButton,BorderLayout.PAGE_START);
@@ -29,6 +30,7 @@ public class Window extends parseF {
         window.add(timeUnit,BorderLayout.EAST);
         window.add(time,BorderLayout.EAST);
         window.add(systemReport,BorderLayout.SOUTH);
+        ////////////////////////////////////////////////
         startButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
